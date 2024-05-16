@@ -1,22 +1,25 @@
-Employee Management Spring Boot Microservice
-Overview
-This project is a Spring Boot microservice application that provides REST APIs for performing CRUD operations on employee information. The application uses Hibernate for ORM and supports either Oracle  as the relational database. Postman is recommended for testing the APIs.
+# Employee Management Spring Boot 
 
-Features
-Create a new employee
-Retrieve employee information
-Update existing employee information
-Delete employee information
-Employee Information
-The employee entity includes the following fields:
+## Overview
+This Employee Management application provides a RESTful API for managing employee information. The backend is built with Spring Boot, using MongoDB as the non-relational database. The application supports CRUD operations on employee data and can be tested using Postman.
 
-Employee ID: Unique 5-digit number
-First Name: String
-Last Name: String
-DOB: Date of Birth
-SSN: Last 4 digits of Social Security Number
-Prerequisites
-Java 8 or higher
-Maven
-Oracle database
-Postman
+## Features
+- **Create Employee**: Add a new employee record to the database.
+- **Retrieve Employee**: Fetch details of an employee by ID.
+- **Update Employee**: Modify existing employee information.
+- **Delete Employee**: Remove an employee record from the database.
+## Employment Information
+- **Employee Id**: Unique 5-digit number.
+- **First Name**: String
+- **Last Name**:String
+- **Email Id**:: String
+- **Date of Birth**:-Date of Birth
+-  **Last 4 SSN**:Last 4 digits of Social Security Number
+## Technologies
+- **Backend**: Spring Boot
+  - **Java**: Core programming language
+  - **Spring MongoRepository**: For database interactions
+  - **Mongo Database**: Database for storing employement data
+- **Frontend**: Angular 8
+  - **TypeScript**: Core programming language
+  - **Angular Material**: For designing responsive and accessible UI components
