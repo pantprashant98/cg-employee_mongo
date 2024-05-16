@@ -1,0 +1,116 @@
+<h3>Create Employee</h3>
+<div [hidden]="submitted" class="form-container">
+  <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+    <div class="form-group">
+      <label for="employeeId">Employee Id</label>
+      <input
+        type="text"
+        class="form-control"
+        id="employeeId"
+        required
+        pattern="^[0-9]{5}$"
+        [(ngModel)]="employee.employeeId"
+        name="employeeId"
+        #employeeId="ngModel"
+      />
+      <div *ngIf="employeeId.invalid && (employeeId.dirty || employeeId.touched)">
+        <div class="alert alert-danger" *ngIf="employeeId.errors?.required">Employee ID is required.</div>
+        <div class="alert alert-danger" *ngIf="employeeId.errors?.pattern">Employee ID must be a 5-digit number.</div>
+      </div>
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        required
+        [(ngModel)]="employee.firstName"
+        name="firstName"
+        #firstName="ngModel"
+      />
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        <div class="alert alert-danger" *ngIf="firstName.errors?.required">First Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        required
+        [(ngModel)]="employee.lastName"
+        name="lastName"
+        #lastName="ngModel"
+      />
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+        <div class="alert alert-danger" *ngIf="lastName.errors?.required">Last Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="emailId">Email Id</label>
+      <input
+        type="email"
+        class="form-control"
+        id="emailId"
+        required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+        [(ngModel)]="employee.emailId"
+        name="emailId"
+        #emailId="ngModel"
+      />
+      <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)">
+        <div class="alert alert-danger" *ngIf="emailId.errors?.required">Email ID is required.</div>
+        <div class="alert alert-danger" *ngIf="emailId.errors?.pattern">Enter a valid email address.</div>
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="dateofBirth">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dateofBirth"
+        required
+        [(ngModel)]="employee.dateofBirth"
+        name="dateofBirth"
+        #dateofBirth="ngModel"
+      />
+      <div *ngIf="dateofBirth.invalid && (dateofBirth.dirty || dateofBirth.touched)">
+        <div class="alert alert-danger" *ngIf="dateofBirth.errors?.required">Date of Birth is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="last4Ssn">Last 4 SSN</label>
+      <input
+        type="text"
+        class="form-control"
+        id="last4Ssn"
+        required
+        pattern="^[0-9]{4}$"
+        [(ngModel)]="employee.last4Ssn"
+        name="last4Ssn"
+        #last4Ssn="ngModel"
+      />
+      <div *ngIf="last4Ssn.invalid && (last4Ssn.dirty || last4Ssn.touched)">
+        <div class="alert alert-danger" *ngIf="last4Ssn.errors?.required">Last 4 SSN is required.</div>
+        <div class="alert alert-danger" *ngIf="last4Ssn.errors?.pattern">Last 4 SSN must be a 4-digit number.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4 class="alert alert-success">You submitted successfully!</h4>
+</div>

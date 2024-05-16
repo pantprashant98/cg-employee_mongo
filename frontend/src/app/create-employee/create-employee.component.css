@@ -1,0 +1,40 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .alert {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.875rem;
+  }
+  
+  .alert-danger {
+    color: #d9534f;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    animation: fadeIn 0.5s;
+  }
+  
+  .alert-success {
+    color: #4cae4c;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    animation: fadeIn 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
